@@ -1,0 +1,148 @@
+[
+  {
+    "type": "base",
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "name": "orders",
+    "fields": [
+      {
+        "name": "platform",
+        "type": "select",
+        "values": [
+          "doordash"
+        ],
+        "maxSelect": 1,
+        "required": true
+      },
+      {
+        "name": "orderId",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "gmailMessageId",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "customer",
+        "type": "text"
+      },
+      {
+        "name": "restaurant",
+        "type": "text"
+      },
+      {
+        "name": "receivedAt",
+        "type": "date",
+        "required": true
+      },
+      {
+        "name": "status",
+        "type": "select",
+        "values": [
+          "pending",
+          "preparing",
+          "sent",
+          "completed"
+        ],
+        "maxSelect": 1,
+        "required": true
+      },
+      {
+        "name": "items",
+        "type": "json"
+      },
+      {
+        "name": "total",
+        "type": "number"
+      },
+      {
+        "name": "currency",
+        "type": "select",
+        "values": [
+          "USD"
+        ],
+        "maxSelect": 1
+      },
+      {
+        "name": "pickupTime",
+        "type": "text"
+      },
+      {
+        "name": "pdfText",
+        "type": "text",
+        "max": 200000
+      },
+      {
+        "name": "warning",
+        "type": "text",
+        "max": 10000
+      },
+      {
+        "name": "subject",
+        "type": "text",
+        "max": 10000
+      },
+      {
+        "name": "hasTotal",
+        "type": "bool"
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX idx_foodhub_order_key ON orders (platform, orderId)"
+    ]
+  },
+  {
+    "type": "base",
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "name": "integrations",
+    "fields": [
+      {
+        "name": "key",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "encryptedTokens",
+        "type": "text",
+        "required": true,
+        "max": 30000
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX idx_foodhub_integration_key ON integrations (key)"
+    ]
+  },
+  {
+    "type": "base",
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "name": "sync_locks",
+    "fields": [
+      {
+        "name": "key",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "leaseExpiresAt",
+        "type": "date",
+        "required": true
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX idx_foodhub_scan_key ON sync_locks (key)"
+    ]
+  }
+]

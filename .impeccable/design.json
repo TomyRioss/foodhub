@@ -1,0 +1,345 @@
+﻿{
+    "schemaVersion":  2,
+    "generatedAt":  "2026-10-09T22:40:43.968Z",
+    "title":  "Design System: Foodhub",
+    "extensions":  {
+                       "colorMeta":  {
+                                         "primary":  {
+                                                         "role":  "primary",
+                                                         "displayName":  "Azul de acción",
+                                                         "tonalRamp":  [
+                                                                           "oklch(15% 0.19 260)",
+                                                                           "oklch(26% 0.19 260)",
+                                                                           "oklch(37% 0.19 260)",
+                                                                           "oklch(48% 0.19 260)",
+                                                                           "oklch(59% 0.19 260)",
+                                                                           "oklch(70% 0.19 260)",
+                                                                           "oklch(82% 0.19 260)",
+                                                                           "oklch(95% 0.19 260)"
+                                                                       ]
+                                                     },
+                                         "dispatch":  {
+                                                          "role":  "secondary",
+                                                          "displayName":  "Petróleo de despacho",
+                                                          "tonalRamp":  [
+                                                                            "oklch(15% 0.06 230)",
+                                                                            "oklch(26% 0.06 230)",
+                                                                            "oklch(37% 0.06 230)",
+                                                                            "oklch(48% 0.06 230)",
+                                                                            "oklch(59% 0.06 230)",
+                                                                            "oklch(70% 0.06 230)",
+                                                                            "oklch(82% 0.06 230)",
+                                                                            "oklch(95% 0.06 230)"
+                                                                        ]
+                                                      },
+                                         "ink":  {
+                                                     "role":  "neutral",
+                                                     "displayName":  "Tinta",
+                                                     "tonalRamp":  [
+                                                                       "oklch(15% 0.05 230)",
+                                                                       "oklch(26% 0.05 230)",
+                                                                       "oklch(37% 0.05 230)",
+                                                                       "oklch(48% 0.05 230)",
+                                                                       "oklch(59% 0.05 230)",
+                                                                       "oklch(70% 0.05 230)",
+                                                                       "oklch(82% 0.05 230)",
+                                                                       "oklch(95% 0.05 230)"
+                                                                   ]
+                                                 },
+                                         "secondary":  {
+                                                           "role":  "neutral",
+                                                           "displayName":  "Control suave",
+                                                           "tonalRamp":  [
+                                                                             "oklch(15% 0.015 240)",
+                                                                             "oklch(26% 0.015 240)",
+                                                                             "oklch(37% 0.015 240)",
+                                                                             "oklch(48% 0.015 240)",
+                                                                             "oklch(59% 0.015 240)",
+                                                                             "oklch(70% 0.015 240)",
+                                                                             "oklch(82% 0.015 240)",
+                                                                             "oklch(95% 0.015 240)"
+                                                                         ]
+                                                       },
+                                         "secondary-ink":  {
+                                                               "role":  "neutral",
+                                                               "displayName":  "Tinta secundaria",
+                                                               "tonalRamp":  [
+                                                                                 "oklch(15% 0.04 235)",
+                                                                                 "oklch(26% 0.04 235)",
+                                                                                 "oklch(37% 0.04 235)",
+                                                                                 "oklch(48% 0.04 235)",
+                                                                                 "oklch(59% 0.04 235)",
+                                                                                 "oklch(70% 0.04 235)",
+                                                                                 "oklch(82% 0.04 235)",
+                                                                                 "oklch(95% 0.04 235)"
+                                                                             ]
+                                                           },
+                                         "canvas":  {
+                                                        "role":  "neutral",
+                                                        "displayName":  "Lienzo frío",
+                                                        "tonalRamp":  [
+                                                                          "oklch(15% 0.012 245)",
+                                                                          "oklch(26% 0.012 245)",
+                                                                          "oklch(37% 0.012 245)",
+                                                                          "oklch(48% 0.012 245)",
+                                                                          "oklch(59% 0.012 245)",
+                                                                          "oklch(70% 0.012 245)",
+                                                                          "oklch(82% 0.012 245)",
+                                                                          "oklch(95% 0.012 245)"
+                                                                      ]
+                                                    },
+                                         "surface":  {
+                                                         "role":  "neutral",
+                                                         "displayName":  "Blanco",
+                                                         "tonalRamp":  [
+                                                                           "oklch(15% 0 0)",
+                                                                           "oklch(26% 0 0)",
+                                                                           "oklch(37% 0 0)",
+                                                                           "oklch(48% 0 0)",
+                                                                           "oklch(59% 0 0)",
+                                                                           "oklch(70% 0 0)",
+                                                                           "oklch(82% 0 0)",
+                                                                           "oklch(95% 0 0)"
+                                                                       ]
+                                                     },
+                                         "lane":  {
+                                                      "role":  "neutral",
+                                                      "displayName":  "Carril frío",
+                                                      "tonalRamp":  [
+                                                                        "oklch(15% 0.018 240)",
+                                                                        "oklch(26% 0.018 240)",
+                                                                        "oklch(37% 0.018 240)",
+                                                                        "oklch(48% 0.018 240)",
+                                                                        "oklch(59% 0.018 240)",
+                                                                        "oklch(70% 0.018 240)",
+                                                                        "oklch(82% 0.018 240)",
+                                                                        "oklch(95% 0.018 240)"
+                                                                    ]
+                                                  },
+                                         "muted-ink":  {
+                                                           "role":  "neutral",
+                                                           "displayName":  "Texto secundario",
+                                                           "tonalRamp":  [
+                                                                             "oklch(15% 0.025 230)",
+                                                                             "oklch(26% 0.025 230)",
+                                                                             "oklch(37% 0.025 230)",
+                                                                             "oklch(48% 0.025 230)",
+                                                                             "oklch(59% 0.025 230)",
+                                                                             "oklch(70% 0.025 230)",
+                                                                             "oklch(82% 0.025 230)",
+                                                                             "oklch(95% 0.025 230)"
+                                                                         ]
+                                                       },
+                                         "border":  {
+                                                        "role":  "neutral",
+                                                        "displayName":  "División",
+                                                        "tonalRamp":  [
+                                                                          "oklch(15% 0.018 240)",
+                                                                          "oklch(26% 0.018 240)",
+                                                                          "oklch(37% 0.018 240)",
+                                                                          "oklch(48% 0.018 240)",
+                                                                          "oklch(59% 0.018 240)",
+                                                                          "oklch(70% 0.018 240)",
+                                                                          "oklch(82% 0.018 240)",
+                                                                          "oklch(95% 0.018 240)"
+                                                                      ]
+                                                    },
+                                         "input":  {
+                                                       "role":  "neutral",
+                                                       "displayName":  "Borde de campo",
+                                                       "tonalRamp":  [
+                                                                         "oklch(15% 0.02 240)",
+                                                                         "oklch(26% 0.02 240)",
+                                                                         "oklch(37% 0.02 240)",
+                                                                         "oklch(48% 0.02 240)",
+                                                                         "oklch(59% 0.02 240)",
+                                                                         "oklch(70% 0.02 240)",
+                                                                         "oklch(82% 0.02 240)",
+                                                                         "oklch(95% 0.02 240)"
+                                                                     ]
+                                                   },
+                                         "danger":  {
+                                                        "role":  "primary",
+                                                        "displayName":  "Error",
+                                                        "tonalRamp":  [
+                                                                          "oklch(15% 0.16 20)",
+                                                                          "oklch(26% 0.16 20)",
+                                                                          "oklch(37% 0.16 20)",
+                                                                          "oklch(48% 0.16 20)",
+                                                                          "oklch(59% 0.16 20)",
+                                                                          "oklch(70% 0.16 20)",
+                                                                          "oklch(82% 0.16 20)",
+                                                                          "oklch(95% 0.16 20)"
+                                                                      ]
+                                                    }
+                                     },
+                       "typographyMeta":  {
+                                              "display":  {
+                                                              "displayName":  "Principal",
+                                                              "purpose":  "Título de superficie"
+                                                          },
+                                              "title":  {
+                                                            "displayName":  "Título",
+                                                            "purpose":  "Tablero y secciones"
+                                                        },
+                                              "body":  {
+                                                           "displayName":  "Contenido",
+                                                           "purpose":  "Texto general"
+                                                       },
+                                              "label":  {
+                                                            "displayName":  "Control",
+                                                            "purpose":  "Etiquetas"
+                                                        },
+                                              "data":  {
+                                                           "displayName":  "Identificador",
+                                                           "purpose":  "Número de pedido"
+                                                       },
+                                              "platform-label":  {
+                                                                     "displayName":  "platform-label",
+                                                                     "purpose":  "CSS actual 9px"
+                                                                 },
+                                              "compact-label":  {
+                                                                    "displayName":  "compact-label",
+                                                                    "purpose":  "CSS actual 11px"
+                                                                },
+                                              "mobile-customer":  {
+                                                                      "displayName":  "mobile-customer",
+                                                                      "purpose":  "CSS actual 15px"
+                                                                  },
+                                              "customer-large":  {
+                                                                     "displayName":  "customer-large",
+                                                                     "purpose":  "CSS actual 18px"
+                                                                 },
+                                              "dialog-title":  {
+                                                                   "displayName":  "dialog-title",
+                                                                   "purpose":  "CSS actual 24px"
+                                                               },
+                                              "display-mobile":  {
+                                                                     "displayName":  "display-mobile",
+                                                                     "purpose":  "CSS actual 31px"
+                                                                 }
+                                          },
+                       "shadows":  [
+                                       {
+                                           "name":  "ticket-hover",
+                                           "value":  "0 3px 12px #1734400b",
+                                           "purpose":  "Interacción de ticket"
+                                       },
+                                       {
+                                           "name":  "dialog",
+                                           "value":  "0 18px 90px #112d4550",
+                                           "purpose":  "Detalle con foco protegido"
+                                       }
+                                   ],
+                       "motion":  [
+                                      {
+                                          "name":  "header-entry",
+                                          "value":  "12px / 0.45s / power3.out",
+                                          "purpose":  "ReactBits AnimatedContent una vez; respeta reduced motion"
+                                      }
+                                  ],
+                       "breakpoints":  [
+                                           {
+                                               "name":  "compact",
+                                               "value":  "1100px"
+                                           },
+                                           {
+                                               "name":  "tablet",
+                                               "value":  "760px"
+                                           },
+                                           {
+                                               "name":  "phone",
+                                               "value":  "420px"
+                                           }
+                                       ]
+                   },
+    "components":  [
+                       {
+                           "name":  "Primary Button",
+                           "kind":  "button",
+                           "refersTo":  "button-primary",
+                           "description":  "Primary Button",
+                           "html":  "\u003cbutton class=\"ds-0\"\u003eAnalizar últimos 30 días\u003c/button\u003e",
+                           "css":  ".ds-0{background:var(--primary);color:var(--primary-foreground);border:0;border-radius:6px;height:36px;padding:8px 16px;font:500 14px Geist,sans-serif;}.ds-0:hover{filter:brightness(.97)}.ds-0:focus-visible{outline:2px solid var(--ring);outline-offset:4px}"
+                       },
+                       {
+                           "name":  "Outline Button",
+                           "kind":  "button",
+                           "refersTo":  "button-outline",
+                           "description":  "Outline Button",
+                           "html":  "\u003cbutton class=\"ds-1\"\u003eBuscar pedidos nuevos\u003c/button\u003e",
+                           "css":  ".ds-1{background:var(--background);color:var(--foreground);border:1px solid var(--input);border-radius:6px;height:36px;padding:8px 16px;font:500 14px Geist,sans-serif;}.ds-1:hover{filter:brightness(.97)}.ds-1:focus-visible{outline:2px solid var(--ring);outline-offset:4px}"
+                       },
+                       {
+                           "name":  "Ghost Button",
+                           "kind":  "button",
+                           "refersTo":  "button-ghost",
+                           "description":  "Ghost Button",
+                           "html":  "\u003cbutton class=\"ds-2\"\u003eSalir\u003c/button\u003e",
+                           "css":  ".ds-2{background:transparent;color:var(--foreground);border:0;border-radius:6px;padding:8px 12px;font:500 12px Geist,sans-serif;}.ds-2:hover{filter:brightness(.97)}.ds-2:focus-visible{outline:2px solid var(--ring);outline-offset:4px}"
+                       },
+                       {
+                           "name":  "Search",
+                           "kind":  "input",
+                           "refersTo":  "search",
+                           "description":  "Search",
+                           "html":  "\u003cinput class=\"ds-3\" aria-label=\"Buscar pedidos\" placeholder=\"Buscar cliente, pedido o producto\"\u003e",
+                           "css":  ".ds-3{background:var(--background);color:var(--foreground);border:1px solid var(--input);border-radius:8px;height:40px;padding:0 12px;font:14px Geist,sans-serif;}.ds-3:hover{filter:brightness(.97)}.ds-3:focus-visible{outline:2px solid var(--ring);outline-offset:4px}"
+                       },
+                       {
+                           "name":  "Brand navigation",
+                           "kind":  "nav",
+                           "refersTo":  "",
+                           "description":  "Brand navigation",
+                           "html":  "\u003ca class=\"ds-4\" href=\"#\"\u003efoodhub\u003c/a\u003e",
+                           "css":  ".ds-4{font:800 28px Geist,sans-serif;letter-spacing:-.035em;color:var(--foreground);text-decoration:none;}.ds-4:hover{filter:brightness(.97)}.ds-4:focus-visible{outline:2px solid var(--ring);outline-offset:4px}"
+                       },
+                       {
+                           "name":  "Platform badge",
+                           "kind":  "chip",
+                           "refersTo":  "",
+                           "description":  "Platform badge",
+                           "html":  "\u003cspan class=\"ds-5\"\u003eDoorDash\u003c/span\u003e",
+                           "css":  ".ds-5{display:inline-block;background:#fff0ef;color:#a5342d;font:500 9px Geist,sans-serif;border-radius:4px;padding:3px 6px;}.ds-5:hover{filter:brightness(.97)}.ds-5:focus-visible{outline:2px solid var(--ring);outline-offset:4px}"
+                       },
+                       {
+                           "name":  "Order ticket",
+                           "kind":  "card",
+                           "refersTo":  "ticket",
+                           "description":  "Order ticket",
+                           "html":  "\u003carticle class=\"ds-6\"\u003eCliente del pedido\u003c/article\u003e",
+                           "css":  ".ds-6{background:var(--background);color:var(--foreground);border:1px solid #d4dfe8;border-radius:12px;padding:16px;font:600 16px Geist,sans-serif;}.ds-6:hover{filter:brightness(.97)}.ds-6:focus-visible{outline:2px solid var(--ring);outline-offset:4px}"
+                       }
+                   ],
+    "narrative":  {
+                      "northStar":  "Centro de despacho",
+                      "overview":  "Una interfaz clara para operar pedidos. Superficies frías, contenido compacto y controles legibles sostienen la lectura rápida; el azul marca las acciones y el petróleo identifica la conexión con correo.",
+                      "keyCharacteristics":  [
+                                                 "Jerarquía compacta y operativa.",
+                                                 "Superficies claras y carriles tonales.",
+                                                 "Movimiento breve; contenido visible desde el inicio."
+                                             ],
+                      "rules":  [
+                                    {
+                                        "name":  "The Action Rule",
+                                        "body":  "El azul vivo identifica acciones y foco.",
+                                        "section":  "colors"
+                                    },
+                                    {
+                                        "name":  "The Flat Rule",
+                                        "body":  "Las tarjetas descansan sin sombra; la elevación acompaña interacción o diálogo.",
+                                        "section":  "elevation"
+                                    }
+                                ],
+                      "dos":  [
+                                  "Do conservar foco visible y alternativas de teclado.",
+                                  "Do mostrar contenido real y errores con recuperación.",
+                                  "Do reservar monospace para identificadores."
+                              ],
+                      "donts":  [
+                                    "Don\u0027t usar SVG sin autorización explícita.",
+                                    "Don\u0027t presentar pedidos ficticios como datos reales.",
+                                    "Don\u0027t depender únicamente de arrastrar para cambiar estados."
+                                ]
+                  }
+}
