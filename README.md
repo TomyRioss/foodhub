@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Foodhub
 
-## Getting Started
+MVP: una cuenta Gmail (atuantojofl@gmail.com), pedidos DoorDash y Kanban persistente en PocketBase foodhub del VPS.
 
-First, run the development server:
+## Uso
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Ejecutar `npm run dev` y abrir http://localhost:3000.
+2. Habilitar Gmail API en el proyecto Google Cloud. En modo prueba, agregar la cuenta como usuario de prueba.
+3. Pulsar Conectar Gmail y autorizar lectura. El ingreso anterior sin permiso Gmail requiere nuevo consentimiento.
+4. Pulsar Analizar últimos 30 días. Recorre todas las páginas de mensajes recibidos, incluidos archivados, spam y papelera; excluye borradores y mensajes enviados sin recepción. Extrae pedidos de orders@doordash.com por asunto y PDF.
+5. Mover pedidos entre pendientes, preparación, enviados y completados mediante arrastre o selector. Los estados persisten entre recargas e importaciones repetidas.
+
+Mientras el tablero permanece abierto, busca pedidos nuevos cada minuto. Incluye búsqueda, detalle, progreso y notificaciones opcionales. No hay sincronización independiente del tablero.
+
+Nunca abre enlaces de confirmación de órdenes. Si falla un PDF, conserva la orden con advertencia y sin inventar importes.
+
+## Configuración
+
+Las credenciales locales están configuradas en .env.local. Consultar .env.example para instalaciones nuevas; nunca publicar secretos. Callback local: http://localhost:3000/api/auth/callback/google.
+
+Auth.js restringe el ingreso a la cuenta permitida y verificada. Las APIs verifican sesión y origen en mutaciones. PocketBase tiene colecciones privadas y tokens Gmail cifrados; las credenciales quedan en servidor.
+
+## Validación
+
+```sh
+npm run lint
+npm run build
+node --experimental-strip-types --test tests/auth-policy.test.mjs tests/doordash.test.mjs tests/import-orders.test.mjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Con servidor de producción local en puerto 3100:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+node --test tests/auth-http.test.mjs
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Integración PocketBase: crea y elimina registros temporales propios de prueba.
 
-## Learn More
+```sh
+node --env-file=.env.local --conditions=react-server --experimental-strip-types --test tests/pocketbase.integration.mjs
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+26 pruebas automatizadas y 15 verificaciones de navegador aprobadas. Ver dogfood-output/report.md. Pendiente validar lectura del Gmail real tras nuevo consentimiento.
+# foodhub
