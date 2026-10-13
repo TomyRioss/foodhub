@@ -42,3 +42,16 @@ yarn-error.log*
 next-env.d.ts
 /.claude-flow/
 /.playwright-cli/
+
+/.vercel/
+.env.local
+.env.*.local
+
+# Nested dependencies and generated Next.js builds
+**/node_modules/
+**/.next/
+
+# Local QA workspaces and generated reports
+/.alerts-smoke/
+/dogfood-output/
+/app/qa-collapse-temporary-*/

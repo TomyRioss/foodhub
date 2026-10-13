@@ -1,0 +1,9 @@
+[Unit]
+Description=Importa pedidos nuevos de Foodhub desde Gmail
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/foodhub-app/deploy/run-orders-cron.sh
+TimeoutStartSec=12min

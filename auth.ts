@@ -1,11 +1,47 @@
-import NextAuth from "next-auth";
+import NextAuth, { customFetch } from "next-auth";
 import Google from "next-auth/providers/google";
 import { isAllowedGoogleProfile } from "@/lib/auth-policy";
 import { getIntegration, saveIntegration } from "@/lib/pocketbase";
 
+const googleProviderFetch: typeof fetch = async (...args) => {
+  const response = await fetch(...args);
+  const [request] = args;
+  const requestUrl = new URL(
+    request instanceof Request ? request.url : request.toString(),
+  );
+
+  if (
+    requestUrl.href !==
+      "https://accounts.google.com/.well-known/openid-configuration" ||
+    !response.ok
+  ) {
+    return response;
+  }
+
+  const metadata = (await response.clone().json()) as Record<string, unknown>;
+
+  if (metadata.authorization_response_iss_parameter_supported !== true) {
+    return response;
+  }
+
+  // Production callbacks omit `iss` despite Google's discovery metadata requiring it.
+  // Keep state, PKCE, nonce, and ID-token issuer validation enabled.
+  return Response.json(
+    { ...metadata, authorization_response_iss_parameter_supported: false },
+    {
+      status: response.status,
+      headers: {
+        "cache-control": response.headers.get("cache-control") ?? "no-store",
+      },
+    },
+  );
+};
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     Google({
+      [customFetch]: googleProviderFetch,
+      checks: ["pkce", "state", "nonce"],
       authorization: {
         params: {
           scope: "openid email profile https://www.googleapis.com/auth/gmail.readonly",

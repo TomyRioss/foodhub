@@ -10,7 +10,7 @@ MVP: una cuenta Gmail (atuantojofl@gmail.com), pedidos DoorDash y Kanban persist
 4. Pulsar Analizar últimos 30 días. Recorre todas las páginas de mensajes recibidos, incluidos archivados, spam y papelera; excluye borradores y mensajes enviados sin recepción. Extrae pedidos de orders@doordash.com por asunto y PDF.
 5. Mover pedidos entre pendientes, preparación, enviados y completados mediante arrastre o selector. Los estados persisten entre recargas e importaciones repetidas.
 
-Mientras el tablero permanece abierto, busca pedidos nuevos cada minuto. Incluye búsqueda, detalle, progreso y notificaciones opcionales. No hay sincronización independiente del tablero.
+Un programador del servidor consulta Gmail cada 60 segundos, aunque el tablero esté cerrado. Con el tablero abierto, los pedidos guardados llegan por SSE; una recarga cada minuto recupera eventos perdidos durante desconexiones. Incluye búsqueda, detalle, progreso y notificaciones opcionales.
 
 Nunca abre enlaces de confirmación de órdenes. Si falla un PDF, conserva la orden con advertencia y sin inventar importes.
 
@@ -19,6 +19,14 @@ Nunca abre enlaces de confirmación de órdenes. Si falla un PDF, conserva la or
 Las credenciales locales están configuradas en .env.local. Consultar .env.example para instalaciones nuevas; nunca publicar secretos. Callback local: http://localhost:3000/api/auth/callback/google.
 
 Auth.js restringe el ingreso a la cuenta permitida y verificada. Las APIs verifican sesión y origen en mutaciones. PocketBase tiene colecciones privadas y tokens Gmail cifrados; las credenciales quedan en servidor.
+
+## Sincronización automática 24/7
+
+El proyecto incluye `Dockerfile`, `compose.24-7.yaml` y un timer de systemd en `deploy/systemd`. En el VPS, la app queda disponible solo en `127.0.0.1:3180`; el timer envía `POST /api/cron/orders` cada minuto. El endpoint reutiliza el bloqueo, cursor y deduplicación existentes; si Gmail falla, el siguiente ciclo reintenta.
+
+Creá `.env.runtime` en el VPS con las variables de `.env.example` y los mismos secretos usados por la instancia que conectó Gmail. Creá `.env.cron` con el mismo `CRON_SECRET`; ambos archivos deben quedar privados. Luego ejecutá `docker compose -f compose.24-7.yaml up -d --build`, instalá las unidades de `deploy/systemd` en `/etc/systemd/system` y habilitá `foodhub-orders-sync.timer`.
+
+La ruta `GET /api/orders/events` usa la sesión de Foodhub y necesita que el host permita SSE. Para abrir el tablero desde Internet hace falta configurar un dominio, HTTPS y el callback correspondiente en Google OAuth.
 
 ## Validación
 

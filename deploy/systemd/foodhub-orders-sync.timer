@@ -1,0 +1,11 @@
+[Unit]
+Description=Consulta Gmail para Foodhub cada minuto
+
+[Timer]
+OnBootSec=20s
+OnUnitActiveSec=60s
+AccuracySec=5s
+Unit=foodhub-orders-sync.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,14 @@
+services:
+  foodhub-app:
+    build: .
+    container_name: foodhub-app-24x7
+    restart: unless-stopped
+    env_file:
+      - .env.runtime
+    environment:
+      AUTH_URL: http://127.0.0.1:3180
+      POCKETBASE_URL: http://host.docker.internal:8094
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    ports:
+      - 127.0.0.1:3180:3000
